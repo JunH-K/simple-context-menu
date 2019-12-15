@@ -1,8 +1,8 @@
 {
   "name": "simple-contextmenu",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "javascript simple context menu",
+  "main": "dist/simpleContextmenu.js",
   "scripts": {
     "build": "webpack -w",
     "dev": "webpack-dev-server --open --progress"
@@ -13,13 +13,16 @@
     "context menu",
     "js context menu"
   ],
-  "author": "Jun K",
+  "author": {
+    "name": "Jun k",
+    "email": "k.developer87@gmail.com",
+    "url": "https://github.com/kdeveloper87"
+  },
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "@babel/cli": "^7.7.5",
     "@babel/core": "^7.7.5",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/polyfill": "^7.7.0",
     "@babel/preset-env": "^7.7.6",
     "babel-loader": "^8.0.6",
     "handlebars": "^4.5.3",
@@ -28,8 +31,16 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
   },
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kdeveloper87/util.git"
+    "url": "https://github.com/kdeveloper87/contextMenu.git"
+  },
+  "homepage": "https://github.com/kdeveloper87/contextMenu.git",
+  "bugs": {
+    "url": "https://github.com/kdeveloper87/contextMenu/issues",
+    "email": "k.developer87@gmail.com"
   }
 }
