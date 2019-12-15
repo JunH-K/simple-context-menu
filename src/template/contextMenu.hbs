@@ -1,5 +1,7 @@
-<ul>
-  {{#each numbers as |number i|}}
-    <li>{{number}}</li>
-  {{/each}}
-</ul>
+<div class="menu">
+  <ul class="menu-options">
+    {{#each menus as |item i|}}
+      <li class="menu-option" data-key={{item.key}} >{{item.title}}</li>
+    {{/each}}
+  </ul>
+</div>
