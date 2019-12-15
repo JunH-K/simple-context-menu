@@ -10,13 +10,20 @@ class ContextMenu {
     const target = Dom.find( selector );
 
     Dom.on( target, 'contextmenu', this.show );
+    Dom.on( document, 'click', this.hide );
+
     this.layer = new Layer( this.container );
-    this.layer.callBack = callback;
+    this.layer.callback( callback );
   }
 
   show = (e) => {
     e.preventDefault();
-    this.layer.show()
+    const [x, y] = Dom.getPosition( e );
+    this.layer.show( x, y );
+  }
+
+  hide = (e) => {
+    this.layer.hide();
   }
 }
 

@@ -14,6 +14,7 @@ class Layer {
     Dom.addClass( this.container, 'layer' );
     Dom.css( this.container,
       {
+        position: 'absolute',
         backgroundColor: 'gray',
         width: '200px',
         height: '200px',
@@ -21,14 +22,17 @@ class Layer {
     );
   }
 
-  set callback(callback) {
-    // this._element.addEventListener( 'contextmenu', function (e) {
-    //   e.preventDefault();
-    //   callback( e, 'second' );
-    // } );
+  callback = (callback) => {
+    this.container.addEventListener( 'click', function (e) {
+      callback( e, 'second' );
+    } );
   }
 
-  show() {
+  show(x, y) {
+    Dom.css( this.container, {
+      top: `${ y }px`,
+      left: `${ x }px`
+    } );
     Dom.show( this.container );
   }
 

@@ -43,28 +43,33 @@ export default class Dom {
     Dom.css( element, {
       display: 'none',
     } )
+  }
 
+  static getPosition(event) {
+    const x = event.clientX;
+    const y = event.clientY;
+    return [x, y];
   }
 
 }
 
-class Elements {
-  constructor(element) {
-    this.element = element;
-  }
-
-  set element(element) {
-    this._element = element;
-  }
-
-  set callback(callback) {
-    this._element.addEventListener( 'contextmenu', function (e) {
-      e.preventDefault();
-      callback( e, 'second' );
-    } );
-  }
-
-  removeListener() {
-    this._element.removeEventListener( 'contextmenu' );
-  }
-}
+// class Elements {
+//   constructor(element) {
+//     this.element = element;
+//   }
+//
+//   set element(element) {
+//     this._element = element;
+//   }
+//
+//   set callback(callback) {
+//     this._element.addEventListener( 'contextmenu', function (e) {
+//       e.preventDefault();
+//       callback( e, 'second' );
+//     } );
+//   }
+//
+//   removeListener() {
+//     this._element.removeEventListener( 'contextmenu' );
+//   }
+// }
