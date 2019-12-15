@@ -1,9 +1,10 @@
 import ContextMenu from './ContextMenu';
+import { mock } from '../mock/mock'
 
 const contextMenu = new ContextMenu( document.querySelector( '#contextMenu' ) );
 
 contextMenu.register( '#target',
-  function (e, a) {
-    console.log( e, a )
-  } );
+  function (key) {
+    console.log( key )
+  }, mock );
 

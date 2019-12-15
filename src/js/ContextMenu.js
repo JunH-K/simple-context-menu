@@ -1,19 +1,21 @@
 import Dom from './Dom';
 import Layer from "./Layer";
+import template from '../template/contextMenu.hbs';
 
 class ContextMenu {
   constructor(container) {
     this.container = container;
   }
 
-  register(selector, callback, menus) {
-    const target = Dom.find( selector );
+  register(targetSelector, callback, menus = []) {
+    const target = Dom.find( targetSelector );
 
     Dom.on( target, 'contextmenu', this.show );
     Dom.on( document, 'click', this.hide );
 
     this.layer = new Layer( this.container );
     this.layer.callback( callback );
+    this.layer.setContent( template( { menus } ) )
   }
 
   show = (e) => {

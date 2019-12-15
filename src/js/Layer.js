@@ -7,25 +7,25 @@ class Layer {
   }
 
   initialize(wrapper) {
-
     wrapper.appendChild( this.container );
     this.hide();
 
-    Dom.addClass( this.container, 'layer' );
     Dom.css( this.container,
       {
         position: 'absolute',
-        backgroundColor: 'gray',
-        width: '200px',
-        height: '200px',
       }
     );
   }
 
   callback = (callback) => {
     this.container.addEventListener( 'click', function (e) {
-      callback( e, 'second' );
+      callback( e.target.dataset.key );
     } );
+  };
+
+  setContent(content) {
+    console.log( content );
+    this.container.innerHTML = content;
   }
 
   show(x, y) {
