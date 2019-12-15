@@ -6,7 +6,8 @@ module.exports = {
   output: {
     path: path.resolve( __dirname, 'dist' ),
     publicPath: 'dist/',
-    filename: 'contextMenu.js'
+    filename: 'contextMenu.js',
+    libraryTarget: 'umd',
   },
   module: {
     rules: [
@@ -27,6 +28,5 @@ module.exports = {
     ]
   },
   devtool: 'source-map',
-  // https://webpack.js.org/concepts/mode/#mode-development
   mode: 'development'
 };

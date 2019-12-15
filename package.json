@@ -1,11 +1,8 @@
 {
-  "name": "simple-contextmenu",
+  "name": "simple-contextmenu-",
   "version": "1.0.0",
   "description": "javascript simple context menu",
   "main": "dist/contextMenu.js",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "build": "webpack -w",
     "dev": "webpack-dev-server --open --progress"
