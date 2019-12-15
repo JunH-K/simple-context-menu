@@ -1,8 +1,7 @@
 const path = require( 'path' );
 
 module.exports = {
-  // entry: ['@babel/polyfill', './src/js/main.js'],
-  entry: './src/js/index.js',
+  entry: ['@babel/polyfill', './src/js/main.js'],
   output: {
     path: path.resolve( __dirname, 'dist' ),
     publicPath: 'dist/',
@@ -24,7 +23,11 @@ module.exports = {
           }
         }
       },
-      { test: /\.hbs$/, loader: 'handlebars-loader' }
+      { test: /\.hbs$/, loader: 'handlebars-loader' },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ]
   },
   devtool: 'source-map',
