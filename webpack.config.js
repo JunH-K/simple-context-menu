@@ -21,7 +21,8 @@ module.exports = {
             presets: ['@babel/preset-env'],
           }
         }
-      }
+      },
+      { test: /\.hbs$/, loader: 'handlebars-loader' }
     ]
   },
   devtool: 'source-map',
