@@ -1,6 +1,6 @@
 {
   "name": "simple-context-menu",
-  "version": "1.1.1",
+  "version": "1.1.4",
   "description": "javascript simple context menu",
   "main": "dist/contextMenu.js",
   "scripts": {
@@ -33,9 +33,6 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
-  },
-  "dependencies": {
-    "@babel/polyfill": "^7.7.0"
   },
   "repository": {
     "type": "git",
