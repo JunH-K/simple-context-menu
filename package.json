@@ -1,5 +1,5 @@
 {
-  "name": "simple-contextmenu-",
+  "name": "simple-context-menu",
   "version": "1.0.0",
   "description": "javascript simple context menu",
   "main": "dist/contextMenu.js",
