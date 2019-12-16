@@ -1,24 +1,35 @@
 ##Context menu Component
 
-> nstall
+> install
 
 ~~~
 npm install simple-context-menu
 ~~~
 
 > Usage
-~~~
+```html
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+      <style>
+        #target {
+          width: 300px;
+          height: 300px;
+          background-color: #767073;
+        }
+      </style>
+    </head>
+    <body>
+    <div id="contextMenu"></div>
+    <div id="target">target</div>
+    <script src="dist/js/bundle.js"></script>
+    </body>
+    </html>
+```
 
-<body>
-<div id="contextMenu"></div>
-<div id="target">target</div>
-<script src="dist/js/bundle.js"></script>
-</body>
-
-~~~
-
-
-~~~
+```javascript
 import ContextMenu from "simple-context-menu";
 
 const mocks = [
@@ -36,4 +47,4 @@ contextMenu.register( '#target',
   },
   mocks);
 
-~~~
+```
