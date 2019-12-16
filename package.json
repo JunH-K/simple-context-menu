@@ -4,8 +4,8 @@
   "description": "javascript simple context menu",
   "main": "dist/contextMenu.js",
   "scripts": {
-    "build": "webpack -w",
-    "dev": "webpack-dev-server --open --progress"
+    "build": "webpack --mode=production",
+    "dev": "webpack-dev-server --open --progress --mode=development"
   },
   "keywords": [
     "javascript context menu",
@@ -42,8 +42,5 @@
   "bugs": {
     "url": "https://github.com/kdeveloper87/contextMenu/issues",
     "email": "k.developer87@gmail.com"
-  },
-  "dependencies": {
-    "uglifyjs-webpack-plugin": "^2.2.0"
   }
 }
