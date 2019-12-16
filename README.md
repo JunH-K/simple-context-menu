@@ -1,6 +1,6 @@
 ##Context menu Component
 
-> install
+> Install
 
 ~~~
 npm install simple-context-menu
