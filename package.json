@@ -1,6 +1,6 @@
 {
   "name": "simple-context-menu",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "javascript simple context menu",
   "main": "dist/contextMenu.js",
   "scripts": {
