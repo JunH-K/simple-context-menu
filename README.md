@@ -6,6 +6,10 @@
 npm install simple-context-menu
 ~~~
 
+> Example
+
+[Example Link](https://codesandbox.io/s/simple-context-menu-f0r07).
+
 > Usage
 ```html
 <!DOCTYPE html>
