@@ -1,4 +1,5 @@
 import Dom from "./Dom";
+import vk from 'simple-value-check';
 
 class Layer {
   constructor(wrapper) {
@@ -18,21 +19,22 @@ class Layer {
   }
 
   callback = (callback) => {
-    this.container.addEventListener( 'click', function (e) {
+    vk.isFunction( callback ) && this.container.addEventListener( 'click', function (e) {
       callback( e.target.dataset.key );
     } );
   };
 
   setContent(content) {
-    console.log( content );
     this.container.innerHTML = content;
   }
 
   show(x, y) {
-    Dom.css( this.container, {
-      top: `${ y }px`,
-      left: `${ x }px`
-    } );
+    if ( vk.isNumber( x ) && vk.isNumber( y ) ){
+      Dom.css( this.container, {
+        top: `${ y }px`,
+        left: `${ x }px`
+      } );
+    }
     Dom.show( this.container );
   }
 

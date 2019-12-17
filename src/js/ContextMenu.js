@@ -4,7 +4,18 @@ import template from '../template/contextMenu.hbs';
 
 class ContextMenu {
   constructor(container) {
-    this.container = container;
+    this.initialize( container );
+  }
+
+  initialize(container) {
+    if ( container ){
+      return this.container = container;
+    }
+
+    const createContainer = document.createElement( 'div' );
+    createContainer.id = 'contextMenu';
+    this.container = createContainer;
+    document.body.appendChild( this.container );
   }
 
   register(targetSelector, callback, menus = []) {

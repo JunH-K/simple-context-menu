@@ -42,5 +42,8 @@
   "bugs": {
     "url": "https://github.com/kdeveloper87/contextMenu/issues",
     "email": "k.developer87@gmail.com"
+  },
+  "dependencies": {
+    "simple-value-check": "^1.0.4"
   }
 }
