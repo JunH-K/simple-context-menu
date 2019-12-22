@@ -6,6 +6,9 @@
 npm install simple-context-menu
 ~~~
 
+> Example
+
+
 
 > Usage
 ```html
@@ -33,19 +36,48 @@ npm install simple-context-menu
 ```javascript
 import ContextMenu from "simple-context-menu";
 
-const mocks = [
-  { title: '첫번째',key:1 },
-  { title: '두번째',key:2 }
-]
+const dataSource = [{
+  title: 'first',
+  key: 'first',
+},
+  {
+    title: 'second',
+    key: 'second',
+    menu: [
+      { title: 'second-1', key: 'second-1' },
+      { title: 'second-2', key: 'second-2' }
+    ]
+  },
+  {
+    title: 'third',
+    key: 'third',
+    menu: [
+      { title: 'third-1', key: 'third-1' },
+      { title: 'third-2', key: 'third-2' },
+      { title: 'third-3', key: 'third-3' }
+    ]
+  }
+];
 
-const contextMenu = new ContextMenu(
-  document.querySelector( '#contextMenu' )
-);
+
+const contextMenu = new ContextMenu();
+const callBack = (key) => {
+  alert( key );
+};
+
+const options = {
+  delay: 500//delay submenu  
+};
 
 contextMenu.register( '#target',
-  function (key) {
-    alert( key );
-  },
-  mocks);
+  callBack,
+  dataSource,
+  options );
 
 ```
+> Options
+
+|property|Description|
+|------|---|
+|delay| delay submenu 
+
