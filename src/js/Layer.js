@@ -2,10 +2,16 @@ import Dom from "./Dom";
 import vk from 'simple-value-check';
 
 class Layer {
-  constructor(wrapper) {
+
+  static zIndex = 999;
+  static defaultDelay = 500;
+
+  constructor(wrapper, options = {}) {
     this.container = document.createElement( 'div' );
     this.initialize( wrapper );
     this.timer = null;
+    this.options = options;
+    this.setDelay( options );
   }
 
   initialize(wrapper) {
@@ -15,22 +21,34 @@ class Layer {
     Dom.css( this.container,
       {
         position: 'absolute',
+        zIndex: Layer.zIndex,
+        ...this.options,
       }
     );
 
-    this.container.addEventListener( 'mousemove', this.onMouseMove )
+    this.container.addEventListener( 'mousemove', this.onMouseMove );
+    this.container.addEventListener( 'mouseout', () => {
+      clearTimeout( this.timer )
+    } )
   }
 
   onMouseMove = (e) => {
+    const { target } = e;
+    const { nodeName = '' } = target;
+
+    if ( !Dom.hasClass( e.target, 'has-submenu' ) ){
+      return;
+    }
+
     if ( this.timer ){
       clearTimeout( this.timer );
     }
 
     this.timer = setTimeout( () => {
-      if ( e.target.nodeName === 'LI' || e.target.nodeName === 'SPAN' ){
-        this.setVisible( this.container, e.target.dataset.index );
+      if ( nodeName === 'LI' || nodeName === 'SPAN' ){
+        this.setVisible( this.container, target.dataset.index );
       }
-    }, 500 );
+    }, this.delay );
   };
 
 
@@ -51,6 +69,14 @@ class Layer {
         }
       } );
     }
+  }
+
+
+  setDelay({ delay = Layer.defaultDelay }) {
+    if ( vk.isNumber( delay ) ){
+      return this.delay = delay;
+    }
+    return this.delay = Layer.defaultDelay;
   }
 
   callback = (callback) => {
@@ -74,7 +100,14 @@ class Layer {
   }
 
   hide() {
+    const submenus = Dom.findAll( '.submenu' );
+
     Dom.hide( this.container );
+    submenus.forEach( (node) => {
+      console.log( node );
+      Dom.hide( node );
+    } );
+
   }
 }
 

@@ -18,13 +18,13 @@ class ContextMenu {
     document.body.appendChild( this.container );
   }
 
-  register(targetSelector, callback, menus = []) {
+  register(targetSelector, callback, menus = [], options = {}) {
     const target = Dom.find( targetSelector );
 
     Dom.on( target, 'contextmenu', this.show );
     Dom.on( document, 'click', this.hide );
 
-    this.layer = new Layer( this.container );
+    this.layer = new Layer( this.container, options );
     this.layer.callback( callback );
     this.layer.setContent( template( { menus } ) )
   }

@@ -3,11 +3,15 @@ export default class Dom {
     return document.querySelector( selector );
   }
 
+  static findAll(selector) {
+    return document.querySelectorAll( selector );
+  }
+
   static on(element, event, handler, context) {
     element.addEventListener( event, handler );
   }
 
-  static css(element, styles = {}) {
+  static css(element = {}, styles = {}) {
     const style = element.style;
 
     if ( !style ){
@@ -34,13 +38,13 @@ export default class Dom {
   }
 
   static show(element) {
-    Dom.css( element, {
+    element && Dom.css( element, {
       display: 'block',
     } )
   }
 
   static hide(element) {
-    Dom.css( element, {
+    element && Dom.css( element, {
       display: 'none',
     } )
   }
