@@ -81,3 +81,12 @@ contextMenu.register( '#target',
 |------|---|
 |delay| delay submenu 
 
+>Update
+
+1.3.0
+
+Add Submenu
+
+1.0.0
+
+
