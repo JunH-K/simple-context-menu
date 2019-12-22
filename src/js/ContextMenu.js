@@ -36,7 +36,9 @@ class ContextMenu {
   }
 
   hide = (e) => {
-    this.layer.hide();
+    if ( !Dom.hasClass( e.target, 'has-submenu' ) ){
+      this.layer.hide();
+    }
   }
 }
 

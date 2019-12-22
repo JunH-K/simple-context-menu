@@ -5,6 +5,7 @@ class Layer {
   constructor(wrapper) {
     this.container = document.createElement( 'div' );
     this.initialize( wrapper );
+    this.timer = null;
   }
 
   initialize(wrapper) {
@@ -16,6 +17,40 @@ class Layer {
         position: 'absolute',
       }
     );
+
+    this.container.addEventListener( 'mousemove', this.onMouseMove )
+  }
+
+  onMouseMove = (e) => {
+    if ( this.timer ){
+      clearTimeout( this.timer );
+    }
+
+    this.timer = setTimeout( () => {
+      if ( e.target.nodeName === 'LI' || e.target.nodeName === 'SPAN' ){
+        this.setVisible( this.container, e.target.dataset.index );
+      }
+    }, 500 );
+  };
+
+
+  setVisible(node, index) {
+    if ( node.childNodes ){
+      node.childNodes.forEach( (child) => {
+        if ( child.nodeName === 'DIV' ){
+          if ( Dom.hasClass( child, 'submenu' ) ){
+            if ( child.dataset.index === index ){
+              Dom.show( child );
+            } else {
+              Dom.hide( child );
+            }
+          }
+        }
+        if ( child.childNodes ){
+          this.setVisible( child, index );
+        }
+      } );
+    }
   }
 
   callback = (callback) => {
