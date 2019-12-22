@@ -1,8 +1,14 @@
+ul, li, button, div {
+    margin: 0;
+    padding: 0;
+}
+
 .menu {
     width: 120px;
-    box-shadow: 0 4px 5px 3px rgba(0, 0, 0, 0.2);
-    border-radius: 5px 5px 5px 5px;
-    background-color: azure;
+    box-shadow: 0 4px 5px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 1px 1px 1px 1px;
+    background-color: #ffffff;
+    border: 1px solid #aaaaaa;
 }
 
 .separator {
@@ -13,16 +19,33 @@
 
 .menu-options {
     list-style: none;
-    padding: 5px 0;
 }
 
 .menu-option {
-    font-weight: 500;
-    font-size: 14px;
+    position: relative;
+    font-weight: 400;
+    font-size: 12px;
     padding: 10px 30px 5px 10px;
     cursor: pointer;
 }
 
 .menu-option:hover {
     background: rgba(0, 0, 0, 0.2);
+}
+
+.has-submenu::after {
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    width: 5px;
+    height: 8px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAICAQAAACb+P2wAAAANklEQVQI12MoWlkUWsQAggxFzkUfi2IhTIYim6L3RRkQJkORcdHroioEswSmIBOmLQ6iDW4YAA8qHUEC0QE+AAAAAElFTkSuQmCC) no-repeat;
+    content: '';
+}
+
+.submenu {
+    /*display: none;*/
+    position: absolute;
+    left: 120px;
+    top: 0;
 }
