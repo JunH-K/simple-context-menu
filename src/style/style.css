@@ -33,7 +33,7 @@ ul, li, button, div {
     background: rgba(0, 0, 0, 0.2);
 }
 
-.has-submenu::after {
+span.has-submenu::after {
     position: absolute;
     top: 13px;
     right: 10px;
@@ -44,7 +44,7 @@ ul, li, button, div {
 }
 
 .submenu {
-    /*display: none;*/
+    display: none;
     position: absolute;
     left: 120px;
     top: 0;

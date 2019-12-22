@@ -1,18 +1,21 @@
 <div class="menu">
   <ul class="menu-options">
-    {{#menus}}
-      <li class="menu-option">
-        <span data-key={{key}}>{{title}}</span>
-        {{#if menu}}
-          <div class="menu submenu">
-            <ul class="menu-options">
-              {{#menu}}
-                <li class="menu-option">{{title}}</li>
-              {{/menu}}
-            </ul>
-          </div>
-        {{/if}}
-      </li>
-    {{/menus}}
+    {{#each menus as |item i|}}
+      {{#if menu}}
+      <li class="menu-option has-submenu" data-index={{i}} data-key={{item.key}}>
+        <span class="has-submenu" data-index={{i}} data-key={{item.key}}>{{item.title}}</span>
+        <div class="menu submenu" data-index={{i}}>
+          <ul class="menu-options">
+            {{#menu}}
+              <li class="menu-option" data-key={{item.key}}>{{title}}</li>
+            {{/menu}}
+          </ul>
+        </div>
+      {{else}}
+      <li class="menu-option" data-key={{item.key}}>
+        <span data-key={{item.key}}>{{item.title}}</span>
+      {{/if}}
+    </li>
+    {{/each}}
   </ul>
 </div>
