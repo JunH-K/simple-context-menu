@@ -104,7 +104,6 @@ class Layer {
 
     Dom.hide( this.container );
     submenus.forEach( (node) => {
-      console.log( node );
       Dom.hide( node );
     } );
 
