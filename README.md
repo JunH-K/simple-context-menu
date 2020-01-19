@@ -1,5 +1,7 @@
 ## Context menu Component
 
+[![HitCount](http://hits.dwyl.io/JunH-K/simple-context-menu.svg)](http://hits.dwyl.io/JunH-K/simple-context-menu)
+
 > Install
 
 ~~~
