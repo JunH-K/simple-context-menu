@@ -1,6 +1,8 @@
 ## Context menu Component
-
+[![npm](https://img.shields.io/npm/v/simple-context-menu)](https://www.npmjs.com/package/simple-context-menu)
+[![Downloads](https://img.shields.io/npm/dm/simple-context-menu.svg)](http://npm-stat.com/charts.html?package=simple-context-menu)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FJunH-K%2Fsimple-context-menu)](https://hits.seeyoufarm.com)
+
 
 > Install
 
